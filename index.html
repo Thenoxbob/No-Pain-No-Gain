@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>No Pain No Gain — Réseaux Informatiques</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav>
+  <span class="nav-logo" onclick="showPage('home')">NO<span>PAIN</span>NOGAIN<span class="cursor"></span></span>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')"     class="active" id="nav-home">// accueil</a></li>
+    <li><a onclick="showPage('bases')"    id="nav-bases">// bases</a></li>
+    <li><a onclick="showPage('materiel')" id="nav-materiel">// matériel</a></li>
+    <li><a onclick="showPage('securite')" id="nav-securite">// sécurité</a></li>
+    <li><a onclick="showPage('conseils')" id="nav-conseils">// conseils</a></li>
+  </ul>
+</nav>
+
+<!-- ===================== ACCUEIL ===================== -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="grid-bg"></div>
+
+    <!-- Schéma réseau SVG décoratif -->
+    <svg class="network-viz" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="cb"/>
+          <feMerge><feMergeNode in="cb"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <g filter="url(#glow)" stroke="#00d4ff" stroke-width="1" fill="none" opacity="0.7">
+        <line x1="100" y1="150" x2="250" y2="200"/>
+        <line x1="250" y1="200" x2="380" y2="130"/>
+        <line x1="250" y1="200" x2="300" y2="350"/>
+        <line x1="300" y1="350" x2="150" y2="400"/>
+        <line x1="300" y1="350" x2="420" y2="430"/>
+        <line x1="100" y1="150" x2="50"  y2="300"/>
+        <line x1="50"  y1="300" x2="150" y2="400"/>
+        <line x1="380" y1="130" x2="420" y2="430"/>
+        <line x1="150" y1="400" x2="200" y2="530"/>
+        <line x1="420" y1="430" x2="350" y2="530"/>
+      </g>
+      <g fill="#00d4ff" opacity="0.9">
+        <circle cx="250" cy="200" r="8"/>
+        <circle cx="100" cy="150" r="5"/>
+        <circle cx="380" cy="130" r="5"/>
+        <circle cx="300" cy="350" r="6"/>
+        <circle cx="150" cy="400" r="5"/>
+        <circle cx="420" cy="430" r="5"/>
+        <circle cx="50"  cy="300" r="4"/>
+        <circle cx="200" cy="530" r="4"/>
+        <circle cx="350" cy="530" r="4"/>
+      </g>
+    </svg>
+
+    <div class="hero-content">
+      <div class="hero-tag">// Formation Réseaux Informatiques v2.0</div>
+      <h1>
+        <span class="accent-line">No Pain</span>
+        <span class="gain-line">No Gain</span>
+      </h1>
+      <p class="hero-sub">Maîtrisez les réseaux informatiques de zéro. Du câble RJ45 aux architectures cloud, devenez l'expert que le terrain exige.</p>
+      <div class="hero-actions">
+        <span class="btn-primary" onclick="showPage('bases')">Commencer maintenant</span>
+        <span class="btn-outline" onclick="showPage('conseils')">Voir le parcours</span>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">5<span>+</span></div>
+        <div class="stat-label">modules</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">OSI<span>7</span></div>
+        <div class="stat-label">couches maîtrisées</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">gratuit</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider"/>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-tag">// navigation des modules</div>
+      <h2 class="section-title">Choisir un <span class="hl">module</span></h2>
+      <p class="section-desc">Chaque module est conçu pour progresser étape par étape. Pas de raccourcis — juste de la rigueur.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card" onclick="showPage('bases')">
+        <div class="card-icon">⬡</div>
+        <div class="card-title">Bases des réseaux</div>
+        <p class="card-text">Modèle OSI, protocoles TCP/IP, adressage IPv4/IPv6, types de réseaux LAN, WAN, MAN...</p>
+        <span class="card-link">Explorer le module</span>
+      </div>
+      <div class="card" onclick="showPage('materiel')">
+        <div class="card-icon">⬡</div>
+        <div class="card-title">Matériel réseau</div>
+        <p class="card-text">Routeurs, switches, firewalls, serveurs, NIC... anatomie complète d'une infrastructure réseau.</p>
+        <span class="card-link">Explorer le module</span>
+      </div>
+      <div class="card" onclick="showPage('securite')">
+        <div class="card-icon">⬡</div>
+        <div class="card-title">Sécurité réseau</div>
+        <p class="card-text">Attaques, vulnérabilités, outils de défense et bonnes pratiques de cybersécurité.</p>
+        <span class="card-link">Explorer le module</span>
+      </div>
+      <div class="card" onclick="showPage('conseils')">
+        <div class="card-icon">⬡</div>
+        <div class="card-title">Conseils pour apprendre</div>
+        <p class="card-text">Ressources, certifications, feuille de route, labs pratiques et astuces de pros.</p>
+        <span class="card-link">Explorer le module</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">// NOPAINOGAIN.NETWORK</div>
+    <div class="footer-text">Fait avec rigueur · Appris dans la douleur · Maîtrisé dans la gloire</div>
+  </footer>
+</div>
+
+<!-- ===================== BASES DES RÉSEAUX ===================== -->
+<div class="page" id="page-bases">
+  <div class="breadcrumb">root / <span>bases-des-reseaux</span></div>
+  <div class="section" style="padding-top:2rem;">
+    <div class="content-layout">
+      <aside class="sidebar">
+        <div class="section-tag" style="margin-bottom:1rem;">// sommaire</div>
+        <ul class="sidebar-nav">
+          <li><a class="active">01. Qu'est-ce qu'un réseau</a></li>
+          <li><a>02. Types de réseaux</a></li>
+          <li><a>03. Modèle OSI</a></li>
+          <li><a>04. TCP/IP & protocoles</a></li>
+          <li><a>05. Adressage IP</a></li>
+        </ul>
+      </aside>
+      <main>
+
+        <div class="topic">
+          <h3 class="topic-title"><span class="number">01</span> Qu'est-ce qu'un réseau informatique ?</h3>
+          <p>Un réseau informatique est un ensemble de machines (ordinateurs, serveurs, smartphones, imprimantes...) interconnectées dans le but de <strong>partager des ressources et d'échanger des données</strong>. Ces connexions peuvent être filaires (câbles Ethernet) ou sans fil (Wi-Fi, Bluetooth).</p>
+          <p>Un réseau repose sur trois composantes fondamentales : les <strong>nœuds</strong> (les équipements), les <strong>liens</strong> (les connexions entre eux), et les <strong>protocoles</strong> (les règles de communication).</p>
+          <div class="info-box">
+            <div class="info-label">// concept clé</div>
+            Un protocole est simplement un ensemble de règles que les machines suivent pour se comprendre — comme une langue commune entre équipements.
+          </div>
+          <div class="code-block">
+<pre><span class="comment"># Ping basique pour tester une connexion réseau</span>
+<span class="keyword">$</span> ping 192.168.1.1
+<span class="comment"># Tracer la route d'un paquet</span>
+<span class="keyword">$</span> traceroute google.com
+<span class="comment"># Voir les interfaces réseau actives</span>
+<span class="keyword">$</span> ip addr show</pre>
+          </div>
+        </div>
+
+        <div class="topic">
+          <h3 class="topic-title"><span class="number">02</span> Types de réseaux</h3>
+          <p>Les réseaux sont classifiés selon leur <strong>étendue géographique</strong> et leur usage :</p>
+          <table class="data-table">
+            <thead>
+              <tr><th>Type</th><th>Nom complet</th><th>Portée</th><th>Exemple</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><span class="tag tag-blue">LAN</span></td><td>Local Area Network</td><td>Bâtiment / bureau</td><td>Réseau d'entreprise</td></tr>
+              <tr><td><span class="tag tag-green">WAN</span></td><td>Wide Area Network</td><td>Pays / monde</td><td>Internet</td></tr>
+              <tr><td><span class="tag tag-red">MAN</span></td><td>Metropolitan Area Network</td><td>Ville</td><td>Réseau universitaire</td></tr>
+              <tr><td><span class="tag tag-blue">PAN</span></td><td>Personal Area Network</td><td>Quelques mètres</td><td>Bluetooth</td></tr>
+              <tr><td><span class="tag tag-green">WLAN</span></td><td>Wireless LAN</td><td>Local sans fil</td><td>Wi-Fi maison</td></tr>
+            </tbody>
+          </table>
+          <div class="info-box warning">
+            <div class="info-label">// attention</div>
+            Un réseau WAN n'est pas forcément public. Les entreprises utilisent des WAN privés (MPLS, SD-WAN) pour relier leurs sites distants de manière sécurisée.
+          </div>
+        </div>
+
+        <div class="topic">
+          <h3 class="topic-title"><span class="number">03</span> Le Modèle OSI</h3>
+          <p>Le modèle OSI (Open Systems Interconnection) découpe les communications réseau en <strong>7 couches distinctes</strong>. C'est la colonne vertébrale de la compréhension des réseaux.</p>
+          <table class="data-table">
+            <thead>
+              <tr><th>N°</th><th>Couche</th><th>Rôle</th><th>Protocoles</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>7</td><td>Application</td><td>Interface utilisateur</td><td>HTTP, FTP, DNS, SMTP</td></tr>
+              <tr><td>6</td><td>Présentation</td><td>Formatage, chiffrement</td><td>SSL/TLS, JPEG</td></tr>
+              <tr><td>5</td><td>Session</td><td>Gestion des sessions</td><td>NetBIOS, PPTP</td></tr>
+              <tr><td>4</td><td>Transport</td><td>Transmission fiable</td><td>TCP, UDP</td></tr>
+              <tr><td>3</td><td>Réseau</td><td>Routage, adressage</td><td>IP, ICMP, ARP</td></tr>
+              <tr><td>2</td><td>Liaison</td><td>Trames, accès au média</td><td>Ethernet, Wi-Fi</td></tr>
+              <tr><td>1</td><td>Physique</td><td>Bits sur le câble</td><td>RJ45, Fibre, USB</td></tr>
+            </tbody>
+          </table>
+          <div class="info-box success">
+            <div class="info-label">// mémo</div>
+            Retenez les couches avec : <strong>"Ah, Peu De Techniciens Réparent Les Pannes"</strong> (Application → Physique)
+          </div>
+        </div>
+
+        <div class="topic">
+          <h3 class="topic-title"><span class="number">04</span> TCP/IP & protocoles essentiels</h3>
+          <p>TCP/IP est le modèle réel utilisé sur Internet. <strong>TCP</strong> garantit la livraison des données via un handshake en 3 étapes. <strong>UDP</strong> est plus rapide mais sans garantie — idéal pour le streaming et les jeux en ligne.</p>
+          <div class="code-block">
+<pre><span class="comment"># Le Three-Way Handshake TCP :</span>
+Client  → Server : <span class="string">SYN</span>        <span class="comment"># "Je veux me connecter"</span>
+Server  → Client : <span class="string">SYN-ACK</span>    <span class="comment"># "D'accord, je confirme"</span>
+Client  → Server : <span class="string">ACK</span>        <span class="comment"># "Connexion établie !"</span>
+
+<span class="comment"># Ports importants à connaître</span>
+<span class="keyword">HTTP</span>   : 80     | <span class="keyword">HTTPS</span>  : 443
+<span class="keyword">DNS</span>    : 53     | <span class="keyword">SSH</span>    : 22
+<span class="keyword">FTP</span>    : 21     | <span class="keyword">SMTP</span>   : 25</pre>
+          </div>
+        </div>
+
+        <div class="topic">
+          <h3 class="topic-title"><span class="number">05</span> Adressage IP</h3>
+          <p>Chaque équipement réseau possède une <strong>adresse IP</strong> — son identifiant unique. Il existe deux versions : IPv4 (32 bits, ex: 192.168.1.1) et IPv6 (128 bits, ex: fe80::1).</p>
+          <table class="data-table">
+            <thead>
+              <tr><th>Plage privée</th><th>Notation CIDR</th><th>Nb d'hôtes</th><th>Usage</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>10.0.0.0</td><td>/8</td><td>~16 millions</td><td>Grands réseaux d'entreprise</td></tr>
+              <tr><td>172.16.0.0</td><td>/12</td><td>~1 million</td><td>Réseaux moyens</td></tr>
+              <tr><td>192.168.0.0</td><td>/16</td><td>~65 000</td><td>Petits réseaux / maison</td></tr>
+              <tr><td>127.0.0.1</td><td>—</td><td>1</td><td>Loopback (machine locale)</td></tr>
+            </tbody>
+          </table>
+          <div class="info-box">
+            <div class="info-label">// subnet mask</div>
+            Le masque de sous-réseau (ex: /24 = 255.255.255.0) détermine quelles adresses appartiennent au même réseau local. Maîtriser le subnetting est essentiel pour tout admin réseau.
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== MATÉRIEL RÉSEAU ===================== -->
+<div class="page" id="page-materiel">
+  <div class="breadcrumb">root / <span>materiel-reseau</span></div>
+  <div class="section" style="padding-top:2rem;">
+    <div class="section-header">
+      <div class="section-tag">// hardware</div>
+      <h2 class="section-title">Matériel <span class="hl">Réseau</span></h2>
+      <p class="section-desc">Comprendre les équipements physiques d'une infrastructure — de l'accès au cœur de réseau.</p>
+    </div>
+
+    <div class="cards-grid" style="margin-bottom:3rem;">
+      <div class="card">
+        <div class="card-icon">🔀</div>
+        <div class="card-title">Switch (Commutateur)</div>
+        <p class="card-text">Opère en couche 2 (OSI). Connecte les machines d'un même réseau local en utilisant les adresses MAC pour diriger les trames. Les switches managés permettent VLANs, QoS et spanning tree.</p>
+        <div style="margin-top:1rem;"><span class="tag tag-blue">Couche 2</span> <span class="tag tag-green">MAC</span> <span class="tag tag-blue">VLAN</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <div class="card-title">Routeur</div>
+        <p class="card-text">Opère en couche 3 (OSI). Relie des réseaux différents et choisit le meilleur chemin pour acheminer les paquets IP. Essentiel pour la connexion à Internet et la segmentation de réseaux.</p>
+        <div style="margin-top:1rem;"><span class="tag tag-green">Couche 3</span> <span class="tag tag-blue">IP</span> <span class="tag tag-red">NAT</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🛡️</div>
+        <div class="card-title">Firewall</div>
+        <p class="card-text">Filtre le trafic réseau selon des règles de sécurité. Peut être matériel ou logiciel. Les NGFW (Next-Gen Firewall) inspectent les paquets en profondeur (DPI) et gèrent les applications.</p>
+        <div style="margin-top:1rem;"><span class="tag tag-red">Sécurité</span> <span class="tag tag-blue">DPI</span> <span class="tag tag-green">ACL</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon">📡</div>
+        <div class="card-title">Point d'accès Wi-Fi</div>
+        <p class="card-text">Crée un réseau sans fil local (WLAN). Les standards actuels vont du Wi-Fi 5 (802.11ac) au Wi-Fi 6/6E (802.11ax). La gestion centralisée via WLC simplifie les déploiements d'entreprise.</p>
+        <div style="margin-top:1rem;"><span class="tag tag-blue">802.11ax</span> <span class="tag tag-green">Wi-Fi 6</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🖥️</div>
+        <div class="card-title">Serveur</div>
+        <p class="card-text">Machine dédiée à fournir des services : DNS, DHCP, fichiers, web, messagerie... Caractérisé par sa haute disponibilité, sa mémoire ECC et ses interfaces réseau redondantes (bonding).</p>
+        <div style="margin-top:1rem;"><span class="tag tag-green">DNS</span> <span class="tag tag-blue">DHCP</span> <span class="tag tag-red">HA</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔌</div>
+        <div class="card-title">Câblage & Médias</div>
+        <p class="card-text">Les câbles Cat5e/Cat6/Cat6a supportent jusqu'à 10 Gbps. La fibre optique (monomode/multimode) permet des débits 100G+ sur de longues distances avec faible latence.</p>
+        <div style="margin-top:1rem;"><span class="tag tag-blue">Cat6a</span> <span class="tag tag-green">Fibre</span> <span class="tag tag-red">SFP+</span></div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3 class="topic-title"><span class="number">+</span> Switch vs Routeur — différences clés</h3>
+      <table class="data-table">
+        <thead>
+          <tr><th>Critère</th><th>Switch</th><th>Routeur</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Couche OSI</td><td>Couche 2 (Liaison)</td><td>Couche 3 (Réseau)</td></tr>
+          <tr><td>Adresse utilisée</td><td>Adresse MAC</td><td>Adresse IP</td></tr>
+          <tr><td>Domaine de diffusion</td><td>Un par VLAN</td><td>Sépare les domaines</td></tr>
+          <tr><td>Protocoles de routage</td><td>Non (sauf switch L3)</td><td>OSPF, BGP, EIGRP...</td></tr>
+          <tr><td>Usage principal</td><td>Réseau local (LAN)</td><td>Entre réseaux différents</td></tr>
+          <tr><td>Prix moyen</td><td>50€ – 5 000€</td><td>100€ – 50 000€+</td></tr>
+        </tbody>
+      </table>
+      <div class="info-box">
+        <div class="info-label">// pro tip</div>
+        Les switches de couche 3 (L3) peuvent faire du routage inter-VLAN, ce qui réduit le besoin de routeurs dédiés dans les petites et moyennes entreprises.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SÉCURITÉ RÉSEAU ===================== -->
+<div class="page" id="page-securite">
+  <div class="breadcrumb">root / <span>securite-reseau</span></div>
+  <div class="section" style="padding-top:2rem;">
+    <div class="section-header">
+      <div class="section-tag">// threat intelligence</div>
+      <h2 class="section-title">Sécurité <span class="hl">Réseau</span></h2>
+      <p class="section-desc">Connaître l'attaque pour mieux défendre. Chaque vulnérabilité a une réponse — apprenez les deux.</p>
+    </div>
+
+    <div class="topic">
+      <h3 class="topic-title"><span class="number">01</span> Principales attaques réseau</h3>
+      <p>Les attaques exploitent les failles des protocoles, des configurations ou du facteur humain. Voici les menaces à connaître absolument :</p>
+      <div class="attack-grid">
+        <div class="attack-card">
+          <h4>Phishing</h4>
+          <p style="font-size:0.85rem;color:var(--muted);">Usurpation d'identité par email ou site frauduleux pour voler des identifiants.</p>
+          <div class="attack-level"><span class="level-text">Danger</span><div class="level-bar"><div class="level-fill" style="width:90%"></div></div><span class="level-text">90%</span></div>
+        </div>
+        <div class="attack-card">
+          <h4>DDoS</h4>
+          <p style="font-size:0.85rem;color:var(--muted);">Saturation d'un serveur par des milliers de requêtes simultanées via un botnet.</p>
+          <div class="attack-level"><span class="level-text">Danger</span><div class="level-bar"><div class="level-fill" style="width:85%"></div></div><span class="level-text">85%</span></div>
+        </div>
+        <div class="attack-card">
+          <h4>Man-in-the-Middle</h4>
+          <p style="font-size:0.85rem;color:var(--muted);">Interception de la communication entre deux parties pour écouter ou modifier les données.</p>
+          <div class="attack-level"><span class="level-text">Danger</span><div class="level-bar"><div class="level-fill" style="width:75%"></div></div><span class="level-text">75%</span></div>
+        </div>
+        <div class="attack-card">
+          <h4>Ransomware</h4>
+          <p style="font-size:0.85rem;color:var(--muted);">Logiciel malveillant qui chiffre les données et demande une rançon pour les restituer.</p>
+          <div class="attack-level"><span class="level-text">Danger</span><div class="level-bar"><div class="level-fill" style="width:95%"></div></div><span class="level-text">95%</span></div>
+        </div>
+        <div class="attack-card">
+          <h4>ARP Spoofing</h4>
+          <p style="font-size:0.85rem;color:var(--muted);">Corruption du cache ARP pour rediriger le trafic d'une machine vers l'attaquant.</p>
+          <div class="attack-level"><span class="level-text">Danger</span><div class="level-bar"><div class="level-fill" style="width:65%"></div></div><span class="level-text">65%</span></div>
+        </div>
+        <div class="attack-card">
+          <h4>SQL Injection</h4>
+          <p style="font-size:0.85rem;color:var(--muted);">Injection de code malveillant dans une requête SQL pour accéder à une base de données.</p>
+          <div class="attack-level"><span class="level-text">Danger</span><div class="level-bar"><div class="level-fill" style="width:80%"></div></div><span class="level-text">80%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3 class="topic-title"><span class="number">02</span> Comment protéger un réseau</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num">01</div><div class="step-content"><h4>Segmenter avec des VLANs</h4><p>Isoler les équipements par zones (RH, prod, invités) pour limiter la propagation d'une attaque latérale.</p></div></div>
+        <div class="step"><div class="step-num">02</div><div class="step-content"><h4>Configurer un Firewall strict</h4><p>Règle par défaut : tout refuser. N'autoriser que ce qui est explicitement nécessaire — principe du moindre privilège.</p></div></div>
+        <div class="step"><div class="step-num">03</div><div class="step-content"><h4>Chiffrer les communications</h4><p>TLS 1.3 pour le web, WPA3 pour le Wi-Fi, VPN IPsec ou WireGuard pour les accès distants sécurisés.</p></div></div>
+        <div class="step"><div class="step-num">04</div><div class="step-content"><h4>Monitorer avec un SIEM</h4><p>Centraliser les logs et détecter les anomalies en temps réel. Outils : Splunk, ELK Stack, Wazuh.</p></div></div>
+        <div class="step"><div class="step-num">05</div><div class="step-content"><h4>Patcher régulièrement</h4><p>90% des attaques exploitent des vulnérabilités connues avec un patch disponible. Mettre à jour sans exception ni délai.</p></div></div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3 class="topic-title"><span class="number">03</span> Outils de sécurité incontournables</h3>
+      <table class="data-table">
+        <thead><tr><th>Outil</th><th>Type</th><th>Utilisation</th></tr></thead>
+        <tbody>
+          <tr><td>Wireshark</td><td><span class="tag tag-blue">Analyse</span></td><td>Capture et analyse de paquets réseau en temps réel</td></tr>
+          <tr><td>Nmap</td><td><span class="tag tag-green">Scan</span></td><td>Découverte de réseaux et audit de ports ouverts</td></tr>
+          <tr><td>Metasploit</td><td><span class="tag tag-red">Pentest</span></td><td>Framework d'exploitation pour tests d'intrusion autorisés</td></tr>
+          <tr><td>Snort / Suricata</td><td><span class="tag tag-blue">IDS/IPS</span></td><td>Détection et prévention d'intrusions réseau</td></tr>
+          <tr><td>OpenVPN / WireGuard</td><td><span class="tag tag-green">VPN</span></td><td>Tunnels chiffrés pour accès distants sécurisés</td></tr>
+          <tr><td>Burp Suite</td><td><span class="tag tag-red">Web</span></td><td>Tests de sécurité des applications web</td></tr>
+        </tbody>
+      </table>
+      <div class="info-box warning">
+        <div class="info-label">// légal !</div>
+        N'utilisez ces outils que sur des réseaux dont vous avez l'autorisation explicite. Scanner sans permission est illégal dans la plupart des pays.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CONSEILS POUR APPRENDRE ===================== -->
+<div class="page" id="page-conseils">
+  <div class="breadcrumb">root / <span>conseils-pour-apprendre</span></div>
+  <div class="section" style="padding-top:2rem;">
+    <div class="section-header">
+      <div class="section-tag">// roadmap</div>
+      <h2 class="section-title">Apprendre les <span class="hl">Réseaux</span></h2>
+      <p class="section-desc">Pas de méthode miracle. Un plan solide, des ressources sérieuses, et de la pratique quotidienne.</p>
+    </div>
+
+    <div class="topic">
+      <h3 class="topic-title"><span class="number">01</span> Feuille de route recommandée</h3>
+      <div class="steps">
+        <div class="step"><div class="step-num">1</div><div class="step-content"><h4>Les bases absolues (1–2 mois)</h4><p>Modèle OSI, TCP/IP, adressage IP, subnetting. Commencez avec "Computer Networking: Top Down Approach" (Kurose & Ross).</p></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-content"><h4>Pratique en lab (continu)</h4><p>Packet Tracer de Cisco (gratuit) ou GNS3. Simulez des topologies, configurez des VLANs, testez des ACL et du routage.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-content"><h4>Certification CompTIA Network+ (3–4 mois)</h4><p>La certification de référence pour valider les bases réseaux sans prérequis constructeur. Reconnue internationalement.</p></div></div>
+        <div class="step"><div class="step-num">4</div><div class="step-content"><h4>Spécialisation Cisco CCNA ou autre (6 mois)</h4><p>CCNA pour le routage/switching Cisco. JNCIA pour Juniper. Selon l'environnement cible.</p></div></div>
+        <div class="step"><div class="step-num">5</div><div class="step-content"><h4>Sécurité & Cloud (avancé)</h4><p>CompTIA Security+, AWS/Azure Networking, CCNP Security. Le marché demande des profils hybrides réseau + cloud + sécurité.</p></div></div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3 class="topic-title"><span class="number">02</span> Compétences prioritaires</h3>
+      <div class="skill-bars">
+        <div class="skill-row"><span class="skill-name">Adressage IP / CIDR</span><div class="skill-track"><div class="skill-fill" style="width:100%"></div></div><span class="skill-pct">100%</span></div>
+        <div class="skill-row"><span class="skill-name">TCP/IP & DNS</span><div class="skill-track"><div class="skill-fill" style="width:95%"></div></div><span class="skill-pct">95%</span></div>
+        <div class="skill-row"><span class="skill-name">VLANs & Spanning Tree</span><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div><span class="skill-pct">85%</span></div>
+        <div class="skill-row"><span class="skill-name">Routage (OSPF, BGP)</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><span class="skill-pct">80%</span></div>
+        <div class="skill-row"><span class="skill-name">Firewall & ACL</span><div class="skill-track"><div class="skill-fill" style="width:75%"></div></div><span class="skill-pct">75%</span></div>
+        <div class="skill-row"><span class="skill-name">VPN & Tunneling</span><div class="skill-track"><div class="skill-fill" style="width:70%"></div></div><span class="skill-pct">70%</span></div>
+        <div class="skill-row"><span class="skill-name">Cloud Networking</span><div class="skill-track"><div class="skill-fill" style="width:60%"></div></div><span class="skill-pct">60%</span></div>
+      </div>
+    </div>
+
+    <div class="topic">
+      <h3 class="topic-title"><span class="number">03</span> Ressources recommandées</h3>
+      <div class="resource-list">
+        <div class="resource-item"><span class="resource-type">Livre</span><div><div class="resource-name">Computer Networking: A Top-Down Approach</div><div class="resource-desc">Kurose & Ross — La bible des réseaux pour débutants et intermédiaires. Traduit en français.</div></div></div>
+        <div class="resource-item"><span class="resource-type">Lab</span><div><div class="resource-name">Cisco Packet Tracer</div><div class="resource-desc">Simulateur réseau gratuit, idéal pour pratiquer sans matériel physique. Disponible après inscription sur Cisco NetAcad.</div></div></div>
+        <div class="resource-item"><span class="resource-type">Cours</span><div><div class="resource-name">Professor Messer — CompTIA Network+</div><div class="resource-desc">Vidéos gratuites, claires et complètes pour préparer la certification Network+. En anglais.</div></div></div>
+        <div class="resource-item"><span class="resource-type">Pratique</span><div><div class="resource-name">TryHackMe / HackTheBox</div><div class="resource-desc">Plateformes gamifiées pour apprendre la sécurité réseau sur des labs réels. TryHackMe est idéal pour débuter.</div></div></div>
+        <div class="resource-item"><span class="resource-type">Outil</span><div><div class="resource-name">Wireshark</div><div class="resource-desc">Analysez le trafic de votre propre réseau pour comprendre concrètement les protocoles en action.</div></div></div>
+        <div class="resource-item"><span class="resource-type">Communauté</span><div><div class="resource-name">Reddit r/networking + r/netsec</div><div class="resource-desc">Communautés actives de professionnels. Idéal pour poser des questions et suivre les tendances du métier.</div></div></div>
+      </div>
+      <div class="info-box success">
+        <div class="info-label">// conseil pro</div>
+        Créez un home lab avec un vieux switch et routeur récupérés (moins de 30€ sur eBay). Rien ne remplace la pratique sur du matériel réel. <strong>Le pain, c'est là. Le gain aussi.</strong>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">// NOPAINOGAIN.NETWORK</div>
+    <div class="footer-text">Fait avec rigueur · Appris dans la douleur · Maîtrisé dans la gloire</div>
+  </footer>
+</div>
+
+<!-- Script externe -->
+<script src="script.js"></script>
+</body>
+</html>
